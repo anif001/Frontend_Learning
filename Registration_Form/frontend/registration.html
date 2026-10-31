@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Registration</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background-glow"></div>
+
+    <main class="registration-container">
+
+        <h1 id="Main-Heading">Create Account</h1>
+
+        <p class="subtitle">Register to get started</p>
+
+        <form id="registrationForm">
+
+            <!-- Email -->
+            <div class="form-group">
+
+                <label for="email">Email Address</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    required
+                    pattern="[a-zA-Z0-9._%+-]+@gmail\.com"
+                    title="Please enter a valid Gmail address"
+                    placeholder="example@gmail.com"
+                >
+
+                <small id="emailError" class="error"></small>
+
+            </div>
+
+            <!-- Mobile -->
+            <div class="form-group">
+
+                <label for="mobile">Mobile Number</label>
+
+                <input
+                    type="tel"
+                    id="mobile"
+                    required
+                    placeholder="Enter your 10-digit mobile number"
+                    pattern="[6-9][0-9]{9}"
+                    maxlength="10"
+                    minlength="10"
+                    title="Enter a valid 10-digit Indian mobile number"
+                >
+
+                <small id="mobileError" class="error"></small>
+
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+
+                <label for="password">Password</label>
+
+                <div class="password-wrapper">
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Create a strong password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="eye-button"
+                        id="togglePassword"
+                        aria-label="Show password"
+                    >
+                        👁
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-group">
+
+                <label for="confirmPassword">Confirm Password</label>
+
+                <div class="password-wrapper">
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="Confirm your password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="eye-button"
+                        id="toggleConfirmPassword"
+                        aria-label="Show confirm password"
+                    >
+                        👁
+                    </button>
+
+                </div>
+
+                <small id="passwordError" class="error"></small>
+
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="registerButton">
+
+                <span id="buttonText">Create Account</span>
+
+                <span id="loadingSpinner" class="spinner"></span>
+
+            </button>
+
+            <p class="login-link">
+                Already have an account?
+                <a href="login.html">Login</a>
+            </p>
+
+        </form>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

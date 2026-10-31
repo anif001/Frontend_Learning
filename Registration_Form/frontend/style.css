@@ -1,0 +1,503 @@
+
+/* =========================
+   1. GLOBAL RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   2. BODY DESIGN
+========================= */
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 16px;
+
+    font-family: 'Segoe UI', sans-serif;
+
+    color: white;
+
+    background:
+        radial-gradient(circle at top left, #243b80, transparent 45%),
+        radial-gradient(circle at bottom right, #542b80, transparent 45%),
+        #080d20;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   3. BACKGROUND GLOW
+========================= */
+
+.background-glow {
+    position: fixed;
+
+    width: 300px;
+    height: 300px;
+
+    background: #2563eb;
+
+    filter: blur(150px);
+
+    opacity: 0.25;
+
+    top: 10%;
+    left: 10%;
+
+    z-index: -1;
+}
+
+
+/* =========================
+   4. REGISTRATION CONTAINER
+========================= */
+
+.registration-container {
+
+    width: 100%;
+    max-width: 450px;
+
+    padding: 40px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 22px;
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        inset 0 1px 1px rgba(255, 255, 255, 0.2);
+
+    transform: perspective(1000px) rotateX(2deg);
+
+    transition: 0.4s ease;
+}
+
+
+/* =========================
+   5. CARD HOVER EFFECT
+========================= */
+
+.registration-container:hover {
+
+    transform: perspective(1000px) rotateX(0deg) translateY(-5px);
+
+    box-shadow:
+        0 35px 65px rgba(0, 0, 0, 0.6),
+        0 0 25px rgba(59, 130, 246, 0.2);
+
+}
+
+
+/* =========================
+   6. HEADING
+========================= */
+
+h1 {
+
+    text-align: center;
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 10px rgba(74, 144, 255, 0.7),
+        0 0 25px rgba(74, 144, 255, 0.4);
+
+}
+
+
+.subtitle {
+
+    text-align: center;
+
+    color: #a5b4fc;
+
+    font-size: 14px;
+
+    margin-top: 8px;
+    margin-bottom: 30px;
+
+}
+
+
+/* =========================
+   7. FORM GROUP
+========================= */
+
+.form-group {
+
+    margin-bottom: 20px;
+
+}
+
+
+label {
+
+    display: block;
+
+    color: #dbeafe;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+
+}
+
+
+/* =========================
+   8. INPUT FIELDS
+========================= */
+
+input {
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    color: white;
+
+    font-size: 14px;
+
+    background: rgba(10, 20, 45, 0.75);
+
+    border: 1px solid rgba(148, 163, 184, 0.35);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    box-shadow:
+        inset 0 3px 8px rgba(0, 0, 0, 0.3),
+        0 3px 8px rgba(0, 0, 0, 0.1);
+
+    transition: all 0.3s ease;
+
+}
+
+
+/* =========================
+   9. PLACEHOLDER
+========================= */
+
+input::placeholder {
+
+    color: #94a3b8;
+
+}
+
+
+/* =========================
+   10. INPUT FOCUS
+========================= */
+
+input:focus {
+
+    border-color: #60a5fa;
+
+    background: rgba(20, 35, 70, 0.95);
+
+    box-shadow:
+        0 0 0 3px rgba(59, 130, 246, 0.15),
+        0 0 18px rgba(59, 130, 246, 0.3);
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================
+   11. PASSWORD WRAPPER
+========================= */
+
+.password-wrapper {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.password-wrapper input {
+
+    padding-right: 45px;
+
+}
+
+
+/* =========================
+   12. EYE BUTTON
+========================= */
+
+.eye-button {
+
+    position: absolute;
+
+    right: 8px;
+
+    width: 32px;
+
+    padding: 5px;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+}
+
+
+.eye-button:hover {
+
+    background: transparent;
+
+    transform: none;
+
+    box-shadow: none;
+
+}
+
+
+/* =========================
+   13. ERROR MESSAGES
+========================= */
+
+.error {
+
+    color: #fca5a5;
+
+    font-size: 12px;
+
+    display: block;
+
+    margin-top: 6px;
+
+}
+
+
+.success {
+
+    color: #4ade80;
+
+    font-size: 12px;
+
+    display: block;
+
+    margin-top: 6px;
+
+}
+
+
+/* =========================
+   14. REGISTER BUTTON
+========================= */
+
+#registerButton {
+
+    width: 100%;
+
+    padding: 14px;
+
+    margin-top: 10px;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 0 #172d78,
+        0 12px 25px rgba(37, 99, 235, 0.35);
+
+    transition: all 0.2s ease;
+
+}
+
+
+/* =========================
+   15. BUTTON HOVER
+========================= */
+
+#registerButton:hover:not(:disabled) {
+
+    background: linear-gradient(135deg, #3b82f6, #9333ea);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 0 #172d78,
+        0 18px 30px rgba(37, 99, 235, 0.45);
+
+}
+
+
+/* =========================
+   16. BUTTON CLICK
+========================= */
+
+#registerButton:active:not(:disabled) {
+
+    transform: translateY(4px);
+
+    box-shadow:
+        0 2px 0 #172d78,
+        0 5px 12px rgba(37, 99, 235, 0.3);
+
+}
+
+
+/* =========================
+   17. BUTTON DISABLED
+========================= */
+
+#registerButton:disabled {
+
+    opacity: 0.7;
+
+    cursor: not-allowed;
+
+}
+
+
+/* =========================
+   18. LOADING SPINNER
+========================= */
+
+.spinner {
+
+    display: none;
+
+    width: 17px;
+    height: 17px;
+
+    border: 3px solid rgba(255, 255, 255, 0.3);
+
+    border-top: 3px solid white;
+
+    border-radius: 50%;
+
+    animation: spin 0.7s linear infinite;
+
+    vertical-align: middle;
+
+    margin-left: 8px;
+
+}
+
+
+#registerButton.loading .spinner {
+
+    display: inline-block;
+
+}
+
+
+@keyframes spin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================
+   19. LOGIN LINK
+========================= */
+
+.login-link {
+
+    text-align: center;
+
+    color: #a5b4fc;
+
+    font-size: 13px;
+
+    margin-top: 25px;
+
+}
+
+
+.login-link a {
+
+    color: #60a5fa;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+}
+
+
+.login-link a:hover {
+
+    color: #a78bfa;
+
+    text-decoration: underline;
+
+}
+
+
+/* =========================
+   20. MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 500px) {
+
+    .registration-container {
+
+        padding: 28px 20px;
+
+    }
+
+    h1 {
+
+        font-size: 27px;
+
+    }
+
+}
